@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safetrip24 Service Logistics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="icon" type="image/png" href="images/logo.jpg"> -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.jpg" alt="Safetrip24 Logo" width="40" height="40" class="d-inline-block align-top" onerror="this.style.display='none'">
+                Safetrip24 Service Logistics
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register Goods</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tracking.html">Tracking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="contactBtn">Contact Us</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-outline-light btn-sm" id="loginBtn">Login</button>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-light btn-sm" id="signupBtn">Sign Up</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Slider -->
+    <section id="home" class="hero-section">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-img-1"></div>
+                    <div class="carousel-caption">
+                        <h2>Global Shipping Solutions</h2>
+                        <p>Reliable logistics services worldwide</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-img-2"></div>
+                    <div class="carousel-caption">
+                        <h2>Fast & Secure Delivery</h2>
+                        <p>Your goods are safe with us</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-img-3"></div>
+                    <div class="carousel-caption">
+                        <h2>Air Freight Services</h2>
+                        <p>Quick delivery by air</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-img-4"></div>
+                    <div class="carousel-caption">
+                        <h2>Sea Freight Expertise</h2>
+                        <p>Cost-effective ocean shipping</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-img-5"></div>
+                    <div class="carousel-caption">
+                        <h2>Custom Clearance</h2>
+                        <p>Hassle-free customs processing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <div class="service-icon mb-3">🚢</div>
+                            <h5 class="card-title">Sea Freight</h5>
+                            <p class="card-text">Cost-effective shipping solutions for large cargo via ocean freight.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <div class="service-icon mb-3">✈️</div>
+                            <h5 class="card-title">Air Freight</h5>
+                            <p class="card-text">Fast and reliable air shipping for time-sensitive deliveries.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <div class="service-icon mb-3">📦</div>
+                            <h5 class="card-title">LCL Consolidators</h5>
+                            <p class="card-text">Less than Container Load services for smaller shipments.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <div class="service-icon mb-3">🏗️</div>
+                            <h5 class="card-title">Project Cargos</h5>
+                            <p class="card-text">Specialized handling for oversized and complex project shipments.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <div class="service-icon mb-3">🚛</div>
+                            <h5 class="card-title">Domestic & Coastal</h5>
+                            <p class="card-text">Efficient transportation services within the UK and coastal areas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <div class="service-icon mb-3">📋</div>
+                            <h5 class="card-title">Custom Clearance</h5>
+                            <p class="card-text">Expert assistance with customs documentation and clearance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- What We Do Section -->
+    <section class="what-we-do py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img class="img-fluid rounded shadow" alt="Safetrip24 logistics operations"
+                         src="images/logistics operations.png">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="mb-3">What We Do</h2>
+                    <p class="lead mb-3">We provide comprehensive logistics solutions tailored to your business needs—covering every mile from origin to destination.</p>
+                    <p class="mb-3">Our team coordinates seamless multi-modal transport, manages customs documentation, and ensures transparent tracking so you always know where your cargo is. With reliable partners across key trade lanes, we deliver speed, security, and cost efficiency.</p>
+                    <ul class="mb-0">
+                        <li>Door-to-door pickup and delivery</li>
+                        <li>Real-time tracking and proactive updates</li>
+                        <li>Customs brokerage and trade compliance</li>
+                        <li>Secure storage and inventory management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <img class="feature-img" alt="Container ship at sea"
+                             src="images/Sea Freight.jpg">
+                        <div class="card-body">
+                            <h5 class="card-title">Sea Freight</h5>
+                            <p class="card-text">Full-container (FCL) and less-than-container (LCL) services with competitive transit times and global coverage.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <img class="feature-img" alt="Airplane cargo logistics"
+                             src="images/Air Freight.jpg">
+                        <div class="card-body">
+                            <h5 class="card-title">Air Freight</h5>
+                            <p class="card-text">Priority air solutions for time-critical shipments, including next-flight-out and express options.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <img class="feature-img" alt="Truck delivering cargo"
+                             src="images/Road & Last‑Mile.webp">
+                        <div class="card-body">
+                            <h5 class="card-title">Road & Last‑Mile</h5>
+                            <p class="card-text">Domestic linehaul and last‑mile delivery with precise ETAs and signature-on-delivery options.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <img class="feature-img" alt="Warehouse storage"
+                             src="images/Warehousing.webp">
+                        <div class="card-body">
+                            <h5 class="card-title">Warehousing</h5>
+                            <p class="card-text">Secure storage, cross-docking, and inventory control to optimize your supply chain.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <img class="feature-img" alt="Customs documentation"
+                             src="images/Customs & Compliance.jpg">
+                        <div class="card-body">
+                            <h5 class="card-title">Customs & Compliance</h5>
+                            <p class="card-text">End‑to‑end customs brokerage and advisory to keep your cargo moving without delays.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <img class="feature-img" alt="Heavy lift project cargo"
+                             src="images/Project Cargo.webp">
+                        <div class="card-body">
+                            <h5 class="card-title">Project Cargo</h5>
+                            <p class="card-text">Special handling for over‑dimensional and heavy‑lift cargo with route surveys and escorts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Safetrip24 Service Logistics</h5>
+                    <p>97 Marlborough Crescent<br>Southampton, United Kingdom</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <p>Email: info@safetrip24.com<br>Phone: +19097528833</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About Us</a></li>
+                        <li><a href="register.html" class="text-white">Register Goods</a></li>
+                        <li><a href="tracking.html" class="text-white">Tracking</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center mb-0">&copy; 2023 Safetrip24 Service Logistics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Contact Us</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Email:</strong> info@safetrip2424.com</p>
+                    <p><strong>Call/Text:</strong> +19097528833</p>
+                    <p><strong>Address:</strong> 97 Marlborough Crescent, Southampton, United Kingdom</p>
+                    <hr>
+                    <p class="mb-0">Feel free to reach out to us for any inquiries or support.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="modal fade" id="authModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="authModalTitle">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="authForm">
+                        <div id="signupFields" style="display: none;">
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="fullName">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="authEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="authEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="authPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="authPassword" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100" id="authSubmit">Login</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="#" id="authSwitch">Don't have an account? Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
